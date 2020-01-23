@@ -9,7 +9,6 @@ import androidx.sqlite.db.SupportSQLiteDatabase
 import com.moeiny.reza.ninenews.database.dao.AssetDao
 import com.moeiny.reza.ninenews.database.dao.RelatedImageDao
 import com.moeiny.reza.ninenews.database.entitiy.AssetEntity
-import com.moeiny.reza.ninenews.database.entitiy.AssetRelatedImageEntity
 import com.moeiny.reza.ninenews.database.entitiy.RelatedImageEntity
 
 @Database(entities = [(AssetEntity::class), (RelatedImageEntity::class)], version = 1, exportSchema = false)

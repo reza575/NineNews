@@ -55,7 +55,7 @@ class NineNewsViewModel(application: Application) : AndroidViewModel(application
         return allAssetData
     }
 
-    //////////////////////////////////////////////////
+    //////////////////RelatedImage Model////////////////////////
 
     fun insert(relatedImageEntity: RelatedImageEntity) {
         nineNewsRepository.insertRelatedImage(relatedImageEntity)
@@ -86,7 +86,7 @@ class NineNewsViewModel(application: Application) : AndroidViewModel(application
         return allRelatedImageData
     }
 
-/////////////////////////////////////////////////////////////
+//////////////////////Serverside Functions///////////////////////////////
 
 fun getNewsInfo(){
 
