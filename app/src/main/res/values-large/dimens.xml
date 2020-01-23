@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="hor_margin">12dp</dimen>
+    <dimen name="Top_margin">30dp</dimen>
+    <dimen name="image_height">225dp</dimen>
+    <dimen name="txtbutton_height">75dp</dimen>
+    <dimen name="txtbutton_hor_margin">30dp</dimen>
+    <dimen name="txtbutton_Top_margin">90dp</dimen>
+    <dimen name="recycler_item_margin">6dp</dimen>
+    <dimen name="recycler_icon_size">135dp</dimen>
+    <dimen name="banner_height">600dp</dimen>
+
+</resources>
