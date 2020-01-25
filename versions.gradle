@@ -89,6 +89,7 @@ test.espressocore = "androidx.test.espresso:espresso-core:3.1.1"
 test.roomtesting = "androidx.room:room-testing:$versions.room"
 test.mockito = "org.mockito:mockito-core:$versions.mockito"
 test.mockitokotlin = "com.nhaarman:mockito-kotlin:$versions.mockitokotlin"
+test.mockitokotlin2 = "com.nhaarman.mockitokotlin2:mockito-kotlin:2.2.0"
 test.mockitoinline = "org.mockito:mockito-inline:$versions.mockitoinline"
 deps.test = test
 

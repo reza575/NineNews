@@ -39,10 +39,7 @@ class HomeActivity : AppCompatActivity() {
 
     }
 
-    fun move(){
-        val intent = Intent(context, MainActivity::class.java)
-        context.startActivity(intent)
-    }
+
 
     companion object {
         private lateinit var context:Context
@@ -56,6 +53,13 @@ class HomeActivity : AppCompatActivity() {
            this.context=context
         }
 
+        fun move(){
+            val intent = Intent(context, MainActivity::class.java)
+            context.startActivity(intent)
+        }
+
     }
+
+
 
 }
