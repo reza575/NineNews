@@ -28,16 +28,16 @@ class TestGetNewsInfo {
 
     var newsMockJson = ""
 
-    lateinit var consumer: NewsService
-    lateinit var spyCosumer: NewsService
-    val callback = slot<NineNewsCallback<News, Throwable>>()
-
-    @Before
-    fun setup() {
-        MockitoAnnotations.initMocks(this)
-        AsyncTask
-
-        val spyCosumer = spyk(NewsService, recordPrivateCalls = true)
+//    lateinit var consumer: NewsService
+//    lateinit var spyCosumer: NewsService
+//    val callback = slot<NineNewsCallback<News, Throwable>>()
+//
+//    @Before
+//    fun setup() {
+//        MockitoAnnotations.initMocks(this)
+//        AsyncTask
+//
+//        val spyCosumer = spyk(NewsService, recordPrivateCalls = true)
     }
 
 
