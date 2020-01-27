@@ -29,23 +29,39 @@ class MainActivity : AppCompatActivity() {
         setUpView()
         assetList=viewModel.getAllAsset() as ArrayList<AssetEntity>
 
-        //Pushing Data from DataBase to View Model and send them to recyclerview
+        /*
+        * Pushing Data from DataBase to View Model and send them to recyclerview
+         */
         loadData()
     }
 
     fun loadData(){
         showList.clear()
         for ( i in 0..assetList.size-1){
-            var imageLiast=viewModel.getRelatedImageByAssetId(assetList[i].asset_Id)
+            var imageList=viewModel.getRelatedImageByAssetId(assetList[i].asset_Id)
              var image:RelatedImageEntity?
 
             var url:String?=""
-            if (imageLiast.size!=0) {
-                image = viewModel.getRelatedImageById(imageLiast[0].image_Id)
+
+           /*
+            * finding  smalest image available for imageView
+            * image view is with:100 and height:100
+            */
+            if (imageList.size!=0) {
+                var index=0
+                for (i in 0..imageList.size-1){
+                    var mul=imageList[i].height*imageList[i].width
+                    if((mul>10000)&&(mul<(imageList[index].height*imageList[index].width))){
+                        index=i
+                    }
+                }
+                image = viewModel.getRelatedImageById(imageList[index].image_Id)
                 url = image.url
             }
 
-            //Creating ShowAsset Instance Model
+            /*
+            * Creating ShowAsset Instance Model
+             */
             var show= ShowAsset(assetList[i].asset_Id, assetList[i].assetType, assetList[i].byLine, assetList[i].headline,
                 url!!, assetList[i].theAbstract, getDate(assetList[i].timeStamp), assetList[i].url)
 
@@ -60,7 +76,9 @@ class MainActivity : AppCompatActivity() {
         recyclerView.adapter = NewsAdapter(this,showList)
     }
 
-    //Initializing Widget and Component
+    /*
+    * Initializing Widget and Component
+     */
     fun setUpView() {
         assetList = ArrayList<AssetEntity>()
         showList = ArrayList<ShowAsset>()
@@ -69,7 +87,9 @@ class MainActivity : AppCompatActivity() {
         recyclerView.layoutManager = LinearLayoutManager(this)
     }
 
-    //changing timestamp to date /time
+    /*
+    * changing timestamp to date /time
+     */
     private fun getDate(time: Long): String {
         val date = Date(time )
         val sdf = SimpleDateFormat("EEE, dd MMM yyyy hh:mm:ss") // the format of your date

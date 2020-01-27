@@ -2,15 +2,15 @@ package com.moeiny.reza.ninenews.adapter
 
 import android.content.Context
 import android.content.Intent
-import android.net.Uri
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.widget.ImageView
 import androidx.databinding.BindingAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import com.moeiny.reza.ninenews.utils.CustomClickListener
 import com.moeiny.reza.ninenews.databinding.NewsBinding
+import com.moeiny.reza.ninenews.utils.CustomClickListener
+import com.moeiny.reza.ninenews.view.ShowActivity
 import com.moeiny.reza.ninenews.viewmodel.ShowAsset
 
 
@@ -41,9 +41,10 @@ class NewsAdapter(var context: Context, var assetList:List<ShowAsset>): Recycler
     }
 
     override fun cardClicked(asset: ShowAsset) {
-         val webOpen = Intent(Intent.ACTION_VIEW)
-         webOpen.setData(Uri.parse(asset.url))
-         context.startActivity(webOpen)
+
+            val intent = Intent(context, ShowActivity::class.java)
+            intent.putExtra("newsURL", asset.url)
+            context!!.startActivity(intent)
        }
 
     @BindingAdapter("imageUrl")

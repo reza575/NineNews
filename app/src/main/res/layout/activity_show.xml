@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:paddingLeft="@dimen/hor_margin"
+    android:paddingRight="@dimen/hor_margin"
+    android:paddingTop="@dimen/hor_margin"
+    android:paddingBottom="@dimen/hor_margin"
+    tools:context=".MainActivity">
+
+        <WebView
+            android:id="@+id/webview"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+ </RelativeLayout>
+

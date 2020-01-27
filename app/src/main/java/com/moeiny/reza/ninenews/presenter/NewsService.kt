@@ -10,9 +10,9 @@ import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.disposables.Disposable
 import io.reactivex.schedulers.Schedulers
 
-//open class NewsService private constructor() {
+open class NewsService private constructor() {
 
-     object NewsService {
+     companion object NewsService {
         private var compositeDisposable: CompositeDisposable = CompositeDisposable()
 
         fun getNewsInfo(block: NineNewsCallback<News, Throwable>) {
@@ -39,4 +39,4 @@ import io.reactivex.schedulers.Schedulers
 
     }
 
-//}
+}
