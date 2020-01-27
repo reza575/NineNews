@@ -18,9 +18,9 @@ open class NewsService private constructor() {
         fun getNewsInfo(block: NineNewsCallback<News, Throwable>) {
             val disposableService: Disposable = NewsRepositoryProvider.provideNewsRepository(retrofit(okHttpClientGETBuilder()))
                 .getNewsInfo()
-                .subscribeOn(Schedulers.io())
-                .observeOn(AndroidSchedulers.mainThread())
-//                .observeOn(Schedulers.computation())
+//                .subscribeOn(Schedulers.io())
+//                .observeOn(AndroidSchedulers.mainThread())
+                .observeOn(Schedulers.computation())
                     .subscribe(
                             { result ->
                                 block.onSuccess(result = result)
